@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		36100A1028772333003A8456 /* MarketCupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A0F28772333003A8456 /* MarketCupApp.swift */; };
-		36100A1228772333003A8456 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A1128772333003A8456 /* ContentView.swift */; };
+		36100A1228772333003A8456 /* CoinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A1128772333003A8456 /* CoinListView.swift */; };
 		36100A1428772334003A8456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36100A1328772334003A8456 /* Assets.xcassets */; };
 		36100A1728772335003A8456 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36100A1628772335003A8456 /* Preview Assets.xcassets */; };
+		36100A1F28772445003A8456 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A1E28772445003A8456 /* Market.swift */; };
+		36100A21287724DA003A8456 /* Roi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A20287724DA003A8456 /* Roi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		36100A0C28772333003A8456 /* MarketCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36100A0F28772333003A8456 /* MarketCupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCupApp.swift; sourceTree = "<group>"; };
-		36100A1128772333003A8456 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		36100A1128772333003A8456 /* CoinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListView.swift; sourceTree = "<group>"; };
 		36100A1328772334003A8456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36100A1628772335003A8456 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		36100A1E28772445003A8456 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		36100A20287724DA003A8456 /* Roi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,12 @@
 		36100A0E28772333003A8456 /* MarketCup */ = {
 			isa = PBXGroup;
 			children = (
+				36100A27287726B2003A8456 /* Config */,
+				36100A24287725B7003A8456 /* Networking */,
+				36100A1D2877233D003A8456 /* Model */,
+				36100A23287725A5003A8456 /* View */,
+				36100A2228772591003A8456 /* ViewModel */,
 				36100A0F28772333003A8456 /* MarketCupApp.swift */,
-				36100A1128772333003A8456 /* ContentView.swift */,
 				36100A1328772334003A8456 /* Assets.xcassets */,
 				36100A1528772335003A8456 /* Preview Content */,
 			);
@@ -65,6 +73,44 @@
 				36100A1628772335003A8456 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		36100A1D2877233D003A8456 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36100A1E28772445003A8456 /* Market.swift */,
+				36100A20287724DA003A8456 /* Roi.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		36100A2228772591003A8456 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		36100A23287725A5003A8456 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36100A1128772333003A8456 /* CoinListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36100A24287725B7003A8456 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		36100A27287726B2003A8456 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36100A1228772333003A8456 /* ContentView.swift in Sources */,
+				36100A1228772333003A8456 /* CoinListView.swift in Sources */,
 				36100A1028772333003A8456 /* MarketCupApp.swift in Sources */,
+				36100A21287724DA003A8456 /* Roi.swift in Sources */,
+				36100A1F28772445003A8456 /* Market.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
