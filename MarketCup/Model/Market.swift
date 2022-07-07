@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Market {
+struct Market: Decodable {
 	let id: String
 	let	symbol: String
 	let name: String

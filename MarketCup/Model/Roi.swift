@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Roi {
+struct Roi: Decodable{
 	let times: Double
 	let currency: String
 	let percentage: Double

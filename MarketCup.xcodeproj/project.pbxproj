@@ -13,6 +13,12 @@
 		36100A1728772335003A8456 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36100A1628772335003A8456 /* Preview Assets.xcassets */; };
 		36100A1F28772445003A8456 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A1E28772445003A8456 /* Market.swift */; };
 		36100A21287724DA003A8456 /* Roi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A20287724DA003A8456 /* Roi.swift */; };
+		36100A292877276A003A8456 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A282877276A003A8456 /* Endpoint.swift */; };
+		36100A2B28772814003A8456 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A2A28772814003A8456 /* RequestMethod.swift */; };
+		36100A2D28772847003A8456 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A2C28772847003A8456 /* APIError.swift */; };
+		36100A2F28772879003A8456 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A2E28772879003A8456 /* NetworkService.swift */; };
+		36100A3228772A45003A8456 /* MarketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3128772A45003A8456 /* MarketsService.swift */; };
+		36100A3428772D25003A8456 /* MarketsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3328772D25003A8456 /* MarketsRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +29,12 @@
 		36100A1628772335003A8456 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36100A1E28772445003A8456 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		36100A20287724DA003A8456 /* Roi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roi.swift; sourceTree = "<group>"; };
+		36100A282877276A003A8456 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		36100A2A28772814003A8456 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		36100A2C28772847003A8456 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		36100A2E28772879003A8456 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		36100A3128772A45003A8456 /* MarketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsService.swift; sourceTree = "<group>"; };
+		36100A3328772D25003A8456 /* MarketsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,7 @@
 			children = (
 				36100A27287726B2003A8456 /* Config */,
 				36100A24287725B7003A8456 /* Networking */,
+				36100A3028772A17003A8456 /* APIs */,
 				36100A1D2877233D003A8456 /* Model */,
 				36100A23287725A5003A8456 /* View */,
 				36100A2228772591003A8456 /* ViewModel */,
@@ -80,6 +93,7 @@
 			children = (
 				36100A1E28772445003A8456 /* Market.swift */,
 				36100A20287724DA003A8456 /* Roi.swift */,
+				36100A3328772D25003A8456 /* MarketsRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +116,10 @@
 		36100A24287725B7003A8456 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				36100A282877276A003A8456 /* Endpoint.swift */,
+				36100A2A28772814003A8456 /* RequestMethod.swift */,
+				36100A2C28772847003A8456 /* APIError.swift */,
+				36100A2E28772879003A8456 /* NetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -111,6 +129,14 @@
 			children = (
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		36100A3028772A17003A8456 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				36100A3128772A45003A8456 /* MarketsService.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +211,14 @@
 			files = (
 				36100A1228772333003A8456 /* CoinListView.swift in Sources */,
 				36100A1028772333003A8456 /* MarketCupApp.swift in Sources */,
+				36100A2F28772879003A8456 /* NetworkService.swift in Sources */,
+				36100A3428772D25003A8456 /* MarketsRequest.swift in Sources */,
 				36100A21287724DA003A8456 /* Roi.swift in Sources */,
 				36100A1F28772445003A8456 /* Market.swift in Sources */,
+				36100A2B28772814003A8456 /* RequestMethod.swift in Sources */,
+				36100A3228772A45003A8456 /* MarketsService.swift in Sources */,
+				36100A292877276A003A8456 /* Endpoint.swift in Sources */,
+				36100A2D28772847003A8456 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
