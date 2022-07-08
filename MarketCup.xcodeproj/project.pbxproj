@@ -18,9 +18,10 @@
 		36100A2D28772847003A8456 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A2C28772847003A8456 /* APIError.swift */; };
 		36100A2F28772879003A8456 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A2E28772879003A8456 /* NetworkService.swift */; };
 		36100A3228772A45003A8456 /* MarketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3128772A45003A8456 /* MarketsService.swift */; };
-		36100A3428772D25003A8456 /* MarketsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3328772D25003A8456 /* MarketsRequest.swift */; };
 		36100A3628773022003A8456 /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3528773022003A8456 /* CoinListViewModel.swift */; };
 		36100A3828773273003A8456 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3728773273003A8456 /* NetworkState.swift */; };
+		36288F8F28783A62008BA62F /* MarketsOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36288F8E28783A62008BA62F /* MarketsOrder.swift */; };
+		36E9C571287822AE0024E218 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9C570287822AD0024E218 /* CoinRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +37,10 @@
 		36100A2C28772847003A8456 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		36100A2E28772879003A8456 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		36100A3128772A45003A8456 /* MarketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsService.swift; sourceTree = "<group>"; };
-		36100A3328772D25003A8456 /* MarketsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsRequest.swift; sourceTree = "<group>"; };
 		36100A3528773022003A8456 /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
 		36100A3728773273003A8456 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
+		36288F8E28783A62008BA62F /* MarketsOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsOrder.swift; sourceTree = "<group>"; };
+		36E9C570287822AD0024E218 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				36100A1E28772445003A8456 /* Market.swift */,
-				36100A3328772D25003A8456 /* MarketsRequest.swift */,
+				36288F8E28783A62008BA62F /* MarketsOrder.swift */,
 				36100A20287724DA003A8456 /* Roi.swift */,
 			);
 			path = Model;
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				36100A1128772333003A8456 /* CoinListView.swift */,
+				36E9C570287822AD0024E218 /* CoinRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,14 +219,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				36100A3828773273003A8456 /* NetworkState.swift in Sources */,
+				36E9C571287822AE0024E218 /* CoinRowView.swift in Sources */,
 				36100A1228772333003A8456 /* CoinListView.swift in Sources */,
 				36100A1028772333003A8456 /* MarketCupApp.swift in Sources */,
 				36100A2F28772879003A8456 /* NetworkService.swift in Sources */,
-				36100A3428772D25003A8456 /* MarketsRequest.swift in Sources */,
 				36100A21287724DA003A8456 /* Roi.swift in Sources */,
 				36100A1F28772445003A8456 /* Market.swift in Sources */,
 				36100A2B28772814003A8456 /* RequestMethod.swift in Sources */,
 				36100A3228772A45003A8456 /* MarketsService.swift in Sources */,
+				36288F8F28783A62008BA62F /* MarketsOrder.swift in Sources */,
 				36100A292877276A003A8456 /* Endpoint.swift in Sources */,
 				36100A2D28772847003A8456 /* APIError.swift in Sources */,
 				36100A3628773022003A8456 /* CoinListViewModel.swift in Sources */,

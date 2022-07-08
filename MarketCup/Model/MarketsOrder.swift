@@ -1,20 +1,11 @@
 //
-//  MarketsRequest.swift
+//  MarketsOrder.swift
 //  MarketCup
 //
-//  Created by Marco Celestino on 07/07/22.
+//  Created by Marco Celestino on 08/07/22.
 //
 
 import Foundation
-
-struct MarketsRequest: Encodable {
-	let vs_currency: String
-	let ids: String?
-	let category: String?
-	let order: MarketsOrder?
-	let per_page: Int?
-	let page: Int?
-}
 
 enum MarketsOrder: String, Encodable {
 	case marketCapDesc = "market_cap_desc"

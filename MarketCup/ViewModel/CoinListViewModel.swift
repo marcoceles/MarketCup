@@ -12,14 +12,12 @@ class CoinListViewModel : ObservableObject {
 	private let marketsService = MarketsService()
 
 	@Published var state: NetworkState<[Market]> = .initial
-	@Published var markets: [Market] = [Market]()
 
 	func loadMarkets() {
-		let currentLocale = Locale.current
-		let currentCurrencyCode = currentLocale.currencyCode ?? "eur"
+		let currencyCode = "eur"
 
 		Task(priority: .background) {
-			let result = await marketsService.getMarkets(with: currentCurrencyCode,
+			let result = await marketsService.getMarkets(with: currencyCode,
 														 order: .marketCapDesc,
 														 limit: 10,
 														 page: 1)
@@ -27,7 +25,6 @@ class CoinListViewModel : ObservableObject {
 				switch result {
 				case .success(let response):
 					self.state = .success(response)
-					self.markets = response
 				case .failure(let error):
 					self.state = .apiError(error)
 				}
