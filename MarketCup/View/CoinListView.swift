@@ -12,7 +12,6 @@ struct CoinListView: View {
 	@ObservedObject var vm: CoinListViewModel
 
 	@State private var isLoading = true
-	@State private var showingError = false
 
 	init(vm: CoinListViewModel) {
 		UITableView.appearance().backgroundColor = .clear
@@ -24,14 +23,16 @@ struct CoinListView: View {
     var body: some View {
 		NavigationView {
 			ZStack {
-				RadialGradient(stops: [
-					.init(color: .indigo, location: 0.3),
-					.init(color: .black, location: 0.3),
-				], center: .top, startRadius: 200, endRadius: 700)
-				.ignoresSafeArea()
+				BackgroundGradientView()
+				
 				contentView()
 			}
 			.navigationTitle("MarketCup")
+			.alert("Ops!", isPresented: $vm.showingError) {
+				Button("Close", role: .cancel) {}
+			} message: {
+				Text("Something went wrong: \(vm.errorMessage)")
+			}
 		}
 		.accentColor(.primary)
 		.onAppear(){

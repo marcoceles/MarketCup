@@ -32,7 +32,7 @@ struct CoinChartView: View {
 		case .success(let data):
 			return AnyView(
 				LineChartView(lineChartParameters: LineChartParameters(
-					data: normalizeChartData(marketChart: data),
+					data: vm.normalizeChartData(marketChart: data),
 					labelColor: .black,
 					secondaryLabelColor: .gray,
 					labelsAlignment: .left,
@@ -51,21 +51,16 @@ struct CoinChartView: View {
 				))
 				.frame(maxWidth: .infinity, minHeight: 200)
 			)
+		case .apiError:
+			return AnyView(
+				Text("Could not load chart")
+			)
 		default:
 			return AnyView(
 				ProgressView()
 					.progressViewStyle(.circular)
 			)
 		}
-	}
-
-	func normalizeChartData(marketChart: MarketChart) -> [LineChartData]{
-		let chartData = marketChart.prices.compactMap {
-			LineChartData($0.last ?? 0.0,
-						  timestamp: Date(timeIntervalSince1970: TimeInterval($0.first ?? 0) / 1000),
-						  label: Date(timeIntervalSince1970: TimeInterval($0.first ?? 0) / 1000).formatted(date: .abbreviated, time: .shortened))
-		}
-		return chartData
 	}
 }
 

@@ -14,6 +14,9 @@ class CoinDetailViewModel : ObservableObject {
 	private let detailService = CoinDetailService()
 
 	@Published var state: NetworkState<CoinDetail> = .initial
+	@Published var showingError = false
+
+	var errorMessage = ""
 
 	init(id: String) {
 		self.id = id
@@ -28,7 +31,8 @@ class CoinDetailViewModel : ObservableObject {
 				case .success(let response):
 					self.state = .success(response)
 				case .failure(let error):
-					self.state = .apiError(error)
+					self.showingError = true
+					self.errorMessage = error.customMessage
 				}
 			}
 		}

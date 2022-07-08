@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LineChartView
 
 class CoinChartViewModel : ObservableObject {
 
@@ -35,6 +36,15 @@ class CoinChartViewModel : ObservableObject {
 				}
 			}
 		}
+	}
+
+	func normalizeChartData(marketChart: MarketChart) -> [LineChartData]{
+		let chartData = marketChart.prices.compactMap {
+			LineChartData($0.last ?? 0.0,
+						  timestamp: Date(timeIntervalSince1970: TimeInterval($0.first ?? 0) / 1000),
+						  label: Date(timeIntervalSince1970: TimeInterval($0.first ?? 0) / 1000).formatted(date: .abbreviated, time: .shortened))
+		}
+		return chartData
 	}
 
 }

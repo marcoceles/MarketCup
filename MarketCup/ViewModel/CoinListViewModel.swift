@@ -12,6 +12,9 @@ class CoinListViewModel : ObservableObject {
 	private let marketsService = MarketsService()
 
 	@Published var state: NetworkState<[Market]> = .initial
+	@Published var showingError = false
+
+	var errorMessage = ""
 
 	func loadMarkets() {
 		let currencyCode = "eur"
@@ -26,7 +29,8 @@ class CoinListViewModel : ObservableObject {
 				case .success(let response):
 					self.state = .success(response)
 				case .failure(let error):
-					self.state = .apiError(error)
+					self.showingError = true
+					self.errorMessage = error.customMessage
 				}
 			}
 		}

@@ -13,12 +13,9 @@ struct CoinDetailView: View {
 	
     var body: some View {
 		ZStack {
-			RadialGradient(stops: [
-				.init(color: .indigo, location: 0.3),
-				.init(color: .black, location: 0.3),
-			], center: .top, startRadius: 200, endRadius: 700)
-			.ignoresSafeArea()
 
+			BackgroundGradientView()
+			
 			ScrollView {
 				contentView()
 			}
@@ -27,6 +24,11 @@ struct CoinDetailView: View {
 			vm.loadDetail()
 		}
 		.navigationBarTitleDisplayMode(.inline)
+		.alert("Ops!", isPresented: $vm.showingError) {
+			Button("Close", role: .cancel) {}
+		} message: {
+			Text("Something went wrong: \(vm.errorMessage)")
+		}
     }
 
 	func contentView() -> AnyView {
