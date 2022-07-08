@@ -15,9 +15,21 @@ struct CoinListView: View {
 	@State private var showingError = false
 	@State private var markets: [Market] = [Market]()
 
+	init(vm: CoinListViewModel) {
+		UITableView.appearance().backgroundColor = .clear
+		UITableViewCell.appearance().backgroundColor = .clear
+
+		self.vm = vm
+	}
+
     var body: some View {
 		NavigationView {
 			ZStack {
+				RadialGradient(stops: [
+					.init(color: .indigo, location: 0.3),
+					.init(color: .black, location: 0.3),
+				], center: .top, startRadius: 200, endRadius: 700)
+				.ignoresSafeArea()
 				contentView()
 			}
 			.navigationTitle("MarketCup")
@@ -36,7 +48,7 @@ struct CoinListView: View {
 						CoinRowView(market: market)
 							.listRowSeparator(.hidden)
 							.listRowBackground(
-								Color.indigo
+								Color(red: 0.7, green: 0.7, blue: 0.7).opacity(0.8)
 									.clipped()
 									.cornerRadius(16)
 							)

@@ -34,10 +34,10 @@ struct CoinRowView: View {
 			VStack (alignment: .leading){
 				Text(market.name ?? "")
 					.font(.headline)
-					.foregroundColor(.white)
+					.foregroundStyle(.primary)
 				Text(market.symbol?.uppercased() ?? "")
 					.font(.caption)
-					.foregroundColor(.white)
+					.foregroundStyle(.primary)
 				Spacer()
 			}
 
@@ -46,7 +46,7 @@ struct CoinRowView: View {
 			VStack (alignment: .trailing){
 				Text(market.currentPrice ?? 0.0, format: .currency(code: "EUR"))
 					.font(.headline)
-					.foregroundColor(.white)
+					.foregroundStyle(.primary)
 				Spacer()
 			}
 		}
