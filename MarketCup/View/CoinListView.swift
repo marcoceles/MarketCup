@@ -13,7 +13,6 @@ struct CoinListView: View {
 
 	@State private var isLoading = true
 	@State private var showingError = false
-	@State private var markets: [Market] = [Market]()
 
 	init(vm: CoinListViewModel) {
 		UITableView.appearance().backgroundColor = .clear
@@ -34,6 +33,7 @@ struct CoinListView: View {
 			}
 			.navigationTitle("MarketCup")
 		}
+		.accentColor(.primary)
 		.onAppear(){
 			self.vm.loadMarkets()
 		}
@@ -57,7 +57,7 @@ struct CoinListView: View {
 													  bottom: 16,
 													  trailing: 0))
 							.background(
-								NavigationLink(destination: Text("test")){}
+								NavigationLink(destination: CoinDetailView(vm: CoinDetailViewModel(id: market.id))){}
 									.buttonStyle(PlainButtonStyle())
 							)
 					}
