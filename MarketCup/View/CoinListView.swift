@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct CoinListView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
 
-struct CoinListView_Previews: PreviewProvider {
-    static var previews: some View {
-		CoinListView()
+	@ObservedObject var vm: CoinListViewModel
+
+	@State private var isLoading = true
+	@State private var showingError = false
+	@State private var markets: [Market] = [Market]()
+
+    var body: some View {
+		NavigationView {
+			List(vm.markets) { market in
+				Text(market.name ?? "Test")
+			}
+		}
+		.onAppear(){
+			self.vm.loadMarkets()
+		}
     }
 }

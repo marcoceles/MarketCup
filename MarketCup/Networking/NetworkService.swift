@@ -8,6 +8,7 @@
 import Foundation
 
 protocol NetworkService {
+	func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, APIError>
 	func sendRequest<T: Decodable, B: Encodable>(endpoint: Endpoint, body: B?, responseModel: T.Type) async -> Result<T, APIError>
 }
 
@@ -24,6 +25,21 @@ extension NetworkService {
 			request.httpBody = try? JSONEncoder().encode(body)
 		}
 
+		return await send(request: request, responseModel: responseModel)
+	}
+
+	func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, APIError> {
+		guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
+			return .failure(.invalidURL)
+		}
+
+		var request = URLRequest(url: url)
+		request.httpMethod = endpoint.method.rawValue
+
+		return await send(request: request, responseModel: responseModel)
+	}
+
+	func send<T: Decodable>(request: URLRequest, responseModel: T.Type) async -> Result<T, APIError> {
 		do {
 			let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
 			guard let response = response as? HTTPURLResponse else {

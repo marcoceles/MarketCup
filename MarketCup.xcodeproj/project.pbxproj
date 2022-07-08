@@ -19,6 +19,8 @@
 		36100A2F28772879003A8456 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A2E28772879003A8456 /* NetworkService.swift */; };
 		36100A3228772A45003A8456 /* MarketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3128772A45003A8456 /* MarketsService.swift */; };
 		36100A3428772D25003A8456 /* MarketsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3328772D25003A8456 /* MarketsRequest.swift */; };
+		36100A3628773022003A8456 /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3528773022003A8456 /* CoinListViewModel.swift */; };
+		36100A3828773273003A8456 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36100A3728773273003A8456 /* NetworkState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		36100A2E28772879003A8456 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		36100A3128772A45003A8456 /* MarketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsService.swift; sourceTree = "<group>"; };
 		36100A3328772D25003A8456 /* MarketsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsRequest.swift; sourceTree = "<group>"; };
+		36100A3528773022003A8456 /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
+		36100A3728773273003A8456 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				36100A1E28772445003A8456 /* Market.swift */,
-				36100A20287724DA003A8456 /* Roi.swift */,
 				36100A3328772D25003A8456 /* MarketsRequest.swift */,
+				36100A20287724DA003A8456 /* Roi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +105,7 @@
 		36100A2228772591003A8456 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				36100A3528773022003A8456 /* CoinListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -116,10 +121,11 @@
 		36100A24287725B7003A8456 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				36100A282877276A003A8456 /* Endpoint.swift */,
-				36100A2A28772814003A8456 /* RequestMethod.swift */,
 				36100A2C28772847003A8456 /* APIError.swift */,
+				36100A282877276A003A8456 /* Endpoint.swift */,
 				36100A2E28772879003A8456 /* NetworkService.swift */,
+				36100A3728773273003A8456 /* NetworkState.swift */,
+				36100A2A28772814003A8456 /* RequestMethod.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36100A3828773273003A8456 /* NetworkState.swift in Sources */,
 				36100A1228772333003A8456 /* CoinListView.swift in Sources */,
 				36100A1028772333003A8456 /* MarketCupApp.swift in Sources */,
 				36100A2F28772879003A8456 /* NetworkService.swift in Sources */,
@@ -219,6 +226,7 @@
 				36100A3228772A45003A8456 /* MarketsService.swift in Sources */,
 				36100A292877276A003A8456 /* Endpoint.swift in Sources */,
 				36100A2D28772847003A8456 /* APIError.swift in Sources */,
+				36100A3628773022003A8456 /* CoinListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

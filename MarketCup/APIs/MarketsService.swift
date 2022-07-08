@@ -7,10 +7,24 @@
 
 import Foundation
 
-struct MarketsEndpoint: Endpoint {
+enum MarketsEndpoint {
+	case getMarkets(currency: String,
+					order: MarketsOrder,
+					limit: Int,
+					page: Int)
+}
+
+extension MarketsEndpoint: Endpoint {
 	
 	var path: String {
-		return "markets"
+		switch self {
+		case .getMarkets(let currency,
+						 let order,
+						 let limit,
+						 let page):
+			return "coins/markets?vs_currency=\(currency)&order=\(order.rawValue)&per_page=\(limit)&page=\(page)"
+		}
+
 	}
 
 	var method: RequestMethod {
@@ -20,11 +34,15 @@ struct MarketsEndpoint: Endpoint {
 
 struct MarketsService: NetworkService {
 
-	func getMarkets(with request: MarketsRequest)
-		async -> Result<[Market], APIError> {
+	func getMarkets(with currency: String,
+					order: MarketsOrder,
+					limit: Int,
+					page: Int) async -> Result<[Market], APIError> {
 
-			return await sendRequest(endpoint: MarketsEndpoint(),
-									 body: request,
+			return await sendRequest(endpoint: MarketsEndpoint.getMarkets(currency: currency,
+																		  order: order,
+																		  limit: limit,
+																		  page: page),
 									 responseModel: [Market].self)
 	}
 }
